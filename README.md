@@ -14,3 +14,5 @@ docker compose up -d --build
 docker compose attach claude-code
 ```
 5. Happy coding!
+### Issues
+- You cannot use ollama-style model names because it contains "/" in the model name.
