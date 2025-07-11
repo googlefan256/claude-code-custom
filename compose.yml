@@ -1,0 +1,16 @@
+services:
+  claude-code:
+    build: .
+    volumes:
+      - ./storage/work:/work
+      - ./storage/cache:/root/.cache
+      - ./storage/start.sh:/root/start.sh
+      - ./storage/claude:/root/.claude
+    working_dir: /work
+    stdin_open: true
+    tty: true
+    environment:
+      - OPENAI_API_URL=${OPENAI_API_URL}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-none}
+      - OPENAI_API_MODEL=${OPENAI_API_MODEL}
+      - BUN_INSTALL_CACHE_DIR=/root/.cache/bun-cache

@@ -1,0 +1,4 @@
+storage/*
+!storage/start.sh
+*.env
+!sample.env
