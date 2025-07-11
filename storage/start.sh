@@ -1,10 +1,10 @@
 #!/bin/bash
 bun install -g @anthropic-ai/claude-code
-[ -f /root/.claude/settings.json ] || {
-    mkdir -p /root/.claude
+[ -f /home/claude/.claude/settings.json ] || {
+    mkdir -p /home/claude/.claude
     echo "{
     \"apiKeyHelper\": \"echo none\",
     \"model\": \"${OPENAI_API_MODEL}\"
-}" > /root/.claude/settings.json
+}" > /home/claude/.claude/settings.json
 }
-bunx --bun anyclaude
+bunx --bun anyclaude --dangerously-skip-permissions 

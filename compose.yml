@@ -3,9 +3,9 @@ services:
     build: .
     volumes:
       - ./storage/work:/work
-      - ./storage/cache:/root/.cache
-      - ./storage/start.sh:/root/start.sh
-      - ./storage/claude:/root/.claude
+      - ./storage/cache:/home/claude/.cache
+      - ./storage/start.sh:/home/claude/start.sh
+      - ./storage/claude:/home/claude/.claude
     working_dir: /work
     stdin_open: true
     tty: true
